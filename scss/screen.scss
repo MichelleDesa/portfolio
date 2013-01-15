@@ -41,8 +41,8 @@ $h4-font-size: 24px;
 $h5-font-size: 16px;
 $h6-font-size: 14px;
 
-$body-font: sans-serif;
-$header-font: serif;
+$body-font: 'Cabin Condensed', sans-serif;
+$header-font: 'Lobster two', cursive;
 
 html {
     font-size: 62.5%;
@@ -58,7 +58,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $header-font;
-    font-weight: normal;
+    font-weight: 700;
     line-height: $header-line-height;
     text-rendering: optimizeLegibility;
     margin: $v-gutter/2 0;
@@ -111,7 +111,7 @@ $footer-width: 100%;
     width: $header-width;
     margin: $v-gutter auto 0;
     .greeting {
-	font-family: $body-font;
+	@include rem($h4-font-size);
 	position: relative;
 	left: 20%;
     }
