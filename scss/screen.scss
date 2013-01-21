@@ -35,14 +35,14 @@ $base-line-height: 1.2;
 $header-line-height: 1;
 
 $h1-font-size: 48px;
-$h2-font-size: 40px;
-$h3-font-size: 32px;
+$h2-font-size: 36px;
+$h3-font-size: 28px;
 $h4-font-size: 24px;
-$h5-font-size: 16px;
-$h6-font-size: 14px;
+$h5-font-size: 20px;
+$h6-font-size: 18px;
 
-$body-font: 'Cabin Condensed', sans-serif;
-$header-font: 'Lobster two', cursive;
+$body-font: 'PT Sans', sans-serif;
+$header-font: 'ChaparralPro-Bold', serif;
 
 html {
     font-size: 62.5%;
@@ -58,7 +58,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $header-font;
-    font-weight: 700;
+    font-weight: normal;
     line-height: $header-line-height;
     text-rendering: optimizeLegibility;
     margin: $v-gutter/2 0;
@@ -89,6 +89,7 @@ h6 {
 }
 
 p {
+    @include rem(20px);
     margin: $v-gutter/2 0;
 }
 
@@ -111,7 +112,6 @@ $footer-width: 100%;
     width: $header-width;
     margin: $v-gutter auto 0;
     .greeting {
-	@include rem($h4-font-size);
 	position: relative;
 	left: 20%;
     }
@@ -120,7 +120,7 @@ $footer-width: 100%;
 	margin: $v-gutter*2 0;
     }
     .bio {
-	@include rem($h4-font-size);
+	@include rem(22px);
     }
 }
 
@@ -140,9 +140,15 @@ $footer-width: 100%;
 	    background-color: #000;
 	    width: 460px;
 	}
-	.project-title {
-	    margin-left: $h-gutter/2;
+	a {
+	    text-decoration: none;
+	    color: $body-text-color;
 	}
+    }
+    .project-title {
+	text-transform: uppercase;
+	text-align: center;
+	margin-left: $h-gutter/2;
     }
     li:nth-child(even) {
     	margin-right: 0;
@@ -151,8 +157,9 @@ $footer-width: 100%;
 
 .page-footer {
     text-align: center;
-    color: $footer-text-color;
-    background-color: $footer-bg-color;
     width: $footer-width;
     padding: $v-gutter*2 0;
+    p {     
+	@include rem(18px);
+    }
 }
