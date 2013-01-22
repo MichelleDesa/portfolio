@@ -3,9 +3,13 @@
 IMPORTS
 GENERAL VARIABLES
 THEME VARIABLES
-TYPOGRAPHY
-LAYOUT
+TYPOGRAPHY VARIABLES
+BASIC ELEMENTS STYLES
+LAYOUT AND THEME STYLES
+HOME PAGE STYLES
 */
+
+
 
 /* $$IMPORTS */
 @import "compass";
@@ -20,16 +24,17 @@ $v-gutter: 10px;
 
 
 
-/* $$THEME */
-$body-text-color: #333;
-$footer-text-color: #fff;
-$link-color: #477b96;
-$header-text-color: $body-text-color;
-$footer-bg-color: #111;
+/* $$THEME VARIABLES */
+$highlight-color: #d77e2c;
+$alt-highlight-color: #c25f04;
+$dark-text-color: #333;
+$light-text-color: #fff;
+$link-color: $alt-highlight-color;
+$header-text-color: $dark-text-color;
 
 
 
-/* $$TYPOGRAPHY */
+/* $$TYPOGRAPHY VARIABLES*/
 $base-font-size: 16px;
 $base-line-height: 1.2;
 $header-line-height: 1;
@@ -44,6 +49,9 @@ $h6-font-size: 18px;
 $body-font: 'PT Sans', sans-serif;
 $header-font: 'ChaparralPro-Bold', serif;
 
+
+
+/* $$BASIC ELEMENTS STYLES */
 html {
     font-size: 62.5%;
 }
@@ -53,7 +61,7 @@ body {
     font-family: $body-font;
     line-height: $base-line-height;
     text-rendering: optimizeLegibility;
-    color: $body-text-color;
+    color: $dark-text-color;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -95,37 +103,64 @@ p {
 
 a {
     color: $link-color;
+    text-decoration: none;
+    &:visited {
+    	color: $highlight-color;
+    }
+    &:hover, &:active {
+	border-bottom: 1px dotted $link-color;
+    }
 }
 
 
-/* $$LAYOUT */
+
+/* $$LAYOUT & THEME STYLES */
 $page-width: 980px;
-$header-width: 640px;
-$footer-width: 100%;
+$narrow-content-width: 690px;
+
+.page-header {
+    background: $highlight-color;
+    padding: $v-gutter; //Also required to fix margin collapsing issue with .name element
+    border-bottom: 5px solid $alt-highlight-color;
+    .name, .title { 
+	@include text-shadow(rgba(0, 0, 0, 0.1) 1px 1px 1px);
+	text-align: center;
+	color: $light-text-color;
+    }
+    .name { 
+	margin-bottom: 0;
+    }
+    .title {
+	text-transform: uppercase;
+	margin-top: 0;
+    }
+}
 
 .page {
     width: $page-width;
     margin: 0 auto;
 }
 
-.page-header {
-    width: $header-width;
-    margin: $v-gutter auto 0;
-    .greeting {
-	position: relative;
-	left: 20%;
-    }
-    .name { 
-	text-align: center;
-	margin: $v-gutter*2 0;
-    }
-    .bio {
-	@include rem(22px);
+.page-content {
+    margin: $v-gutter*6 $h-gutter;
+}
+
+.page-footer {
+    text-align: center;
+    padding: $v-gutter;
+    border-bottom: 5px solid $alt-highlight-color;
+    p {     
+	@include rem(18px);
     }
 }
 
-.page-content {
-    margin: $v-gutter*6 $h-gutter;
+
+
+/* $$HOME PAGE STYLES */
+.bio {
+    @include rem(22px);
+    width: $narrow-content-width;
+    margin: 0 auto $v-gutter*6;
 }
 
 .project-list {
@@ -134,32 +169,26 @@ $footer-width: 100%;
     padding: 0;
     margin: 0;
     li {
-	margin: 0 $h-gutter $v-gutter*2 0;
+	margin: 0 $h-gutter $v-gutter*6 0;
 	float: left;
 	img {
 	    background-color: #000;
-	    width: 460px;
+	    width: 300px;
 	}
 	a {
 	    text-decoration: none;
-	    color: $body-text-color;
+	    color: $dark-text-color;
+	    &:hover, &:active {
+		color: $link-color;
+		border-bottom: none;
+	    }
 	}
     }
     .project-title {
 	text-transform: uppercase;
 	text-align: center;
-	margin-left: $h-gutter/2;
     }
-    li:nth-child(even) {
+    li:nth-child(3) {
     	margin-right: 0;
-    }
-}
-
-.page-footer {
-    text-align: center;
-    width: $footer-width;
-    padding: $v-gutter*2 0;
-    p {     
-	@include rem(18px);
     }
 }

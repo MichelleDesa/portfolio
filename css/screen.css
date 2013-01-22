@@ -3,8 +3,10 @@
 IMPORTS
 GENERAL VARIABLES
 THEME VARIABLES
-TYPOGRAPHY
-LAYOUT
+TYPOGRAPHY VARIABLES
+BASIC ELEMENTS STYLES
+LAYOUT AND THEME STYLES
+HOME PAGE STYLES
 */
 /* $$IMPORTS */
 /* normalize.css v2.0.1 | MIT License | git.io/normalize */
@@ -358,8 +360,9 @@ table {
 
 /* MIXINS */
 /* $$GENERAL VARIABLES */
-/* $$THEME */
-/* $$TYPOGRAPHY */
+/* $$THEME VARIABLES */
+/* $$TYPOGRAPHY VARIABLES*/
+/* $$BASIC ELEMENTS STYLES */
 html {
   font-size: 62.5%;
 }
@@ -418,34 +421,60 @@ p {
 }
 
 a {
-  color: #477b96;
+  color: #c25f04;
+  text-decoration: none;
+}
+a:visited {
+  color: #d77e2c;
+}
+a:hover, a:active {
+  border-bottom: 1px dotted #c25f04;
 }
 
-/* $$LAYOUT */
+/* $$LAYOUT & THEME STYLES */
+.page-header {
+  background: #d77e2c;
+  padding: 10px;
+  border-bottom: 5px solid #c25f04;
+}
+.page-header .name, .page-header .title {
+  text-shadow: rgba(0, 0, 0, 0.1) 1px 1px 1px;
+  text-align: center;
+  color: white;
+}
+.page-header .name {
+  margin-bottom: 0;
+}
+.page-header .title {
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
 .page {
   width: 980px;
   margin: 0 auto;
 }
 
-.page-header {
-  width: 640px;
-  margin: 10px auto 0;
-}
-.page-header .greeting {
-  position: relative;
-  left: 20%;
-}
-.page-header .name {
-  text-align: center;
-  margin: 20px 0;
-}
-.page-header .bio {
-  font-size: 22px;
-  font-size: 2.2rem;
-}
-
 .page-content {
   margin: 60px 20px;
+}
+
+.page-footer {
+  text-align: center;
+  padding: 10px;
+  border-bottom: 5px solid #c25f04;
+}
+.page-footer p {
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+/* $$HOME PAGE STYLES */
+.bio {
+  font-size: 22px;
+  font-size: 2.2rem;
+  width: 690px;
+  margin: 0 auto 60px;
 }
 
 .project-list {
@@ -462,32 +491,25 @@ a {
   clear: both;
 }
 .project-list li {
-  margin: 0 20px 20px 0;
+  margin: 0 20px 60px 0;
   float: left;
 }
 .project-list li img {
   background-color: #000;
-  width: 460px;
+  width: 300px;
 }
 .project-list li a {
   text-decoration: none;
   color: #333333;
 }
+.project-list li a:hover, .project-list li a:active {
+  color: #c25f04;
+  border-bottom: none;
+}
 .project-list .project-title {
   text-transform: uppercase;
   text-align: center;
-  margin-left: 10px;
 }
-.project-list li:nth-child(even) {
+.project-list li:nth-child(3) {
   margin-right: 0;
-}
-
-.page-footer {
-  text-align: center;
-  width: 100%;
-  padding: 20px 0;
-}
-.page-footer p {
-  font-size: 18px;
-  font-size: 1.8rem;
 }
