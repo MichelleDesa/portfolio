@@ -7,6 +7,7 @@ TYPOGRAPHY VARIABLES
 BASIC ELEMENTS STYLES
 LAYOUT AND THEME STYLES
 HOME PAGE STYLES
+PROJECT PAGE STYLES
 */
 
 
@@ -98,7 +99,7 @@ h6 {
 
 p {
     @include rem(20px);
-    margin: $v-gutter/2 0;
+    margin: $v-gutter*3 0;
 }
 
 a {
@@ -145,6 +146,12 @@ $narrow-content-width: 690px;
     margin: $v-gutter*6 $h-gutter;
 }
 
+.narrow-content {
+    width: $narrow-content-width;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .page-footer {
     text-align: center;
     padding: $v-gutter;
@@ -159,7 +166,7 @@ $narrow-content-width: 690px;
 /* $$HOME PAGE STYLES */
 .bio {
     @include rem(22px);
-    width: $narrow-content-width;
+    @extend .narrow-content;
     margin: 0 auto $v-gutter*6;
 }
 
@@ -191,4 +198,21 @@ $narrow-content-width: 690px;
     li:nth-child(3) {
     	margin-right: 0;
     }
+}
+
+
+
+/* $$PROJECT PAGE STYLES */
+.project-page {
+    .content-header, p {
+	@extend .narrow-content;
+    }
+    img {
+	max-width: 100%;
+    }
+}
+
+.post-footer-icon {
+    margin: 0 auto;
+    display: block;
 }
