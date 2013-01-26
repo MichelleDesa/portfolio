@@ -113,6 +113,17 @@ a {
     }
 }
 
+figure {
+    margin-bottom: $v-gutter*3;
+}
+
+figcaption {
+    font-family: $header-font;
+    font-style: italic;
+    text-align: center;
+    text-transform: uppercase;
+    padding: $v-gutter/2 $h-gutter/2 0;
+}
 
 
 /* $$LAYOUT & THEME STYLES */

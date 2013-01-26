@@ -432,6 +432,18 @@ a:hover, a:active {
   border-bottom: 1px dotted #c25f04;
 }
 
+figure {
+  margin-bottom: 30px;
+}
+
+figcaption {
+  font-family: "ChaparralPro-Bold", serif;
+  font-style: italic;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px 10px 0;
+}
+
 /* $$LAYOUT & THEME STYLES */
 .page-header {
   background: #d77e2c;
