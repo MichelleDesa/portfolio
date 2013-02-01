@@ -416,8 +416,8 @@ h6 {
 }
 
 p {
-  font-size: 20px;
-  font-size: 2rem;
+  font-size: 18px;
+  font-size: 1.8rem;
   margin: 30px 0;
 }
 
@@ -435,10 +435,15 @@ a:hover, a:active {
 figure {
   margin-bottom: 30px;
 }
+figure img {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 4px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 4px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 4px;
+  border: 1px solid white;
+}
 
 figcaption {
   font-family: "ChaparralPro-Bold", serif;
-  font-style: italic;
   text-align: center;
   text-transform: uppercase;
   padding: 5px 10px 0;
@@ -454,6 +459,14 @@ figcaption {
   text-shadow: rgba(0, 0, 0, 0.1) 1px 1px 1px;
   text-align: center;
   color: white;
+}
+.page-header .logo-wrapper {
+  text-align: center;
+  margin: 10px 0;
+  display: block;
+}
+.page-header .logo-wrapper:hover {
+  border-bottom: none;
 }
 .page-header .name {
   margin-bottom: 0;
@@ -533,6 +546,9 @@ figcaption {
 }
 
 /* $$PROJECT PAGE STYLES */
+.project-page .logo-wrapper {
+  margin: 0;
+}
 .project-page img {
   max-width: 100%;
 }

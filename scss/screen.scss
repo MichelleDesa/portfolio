@@ -98,7 +98,7 @@ h6 {
 }
 
 p {
-    @include rem(20px);
+    @include rem(18px);
     margin: $v-gutter*3 0;
 }
 
@@ -115,11 +115,14 @@ a {
 
 figure {
     margin-bottom: $v-gutter*3;
+    img {
+	@include box-shadow(rgba(0, 0, 0, 0.3) 0 0 4px);
+	border: 1px solid #fff;
+    }
 }
 
 figcaption {
     font-family: $header-font;
-    font-style: italic;
     text-align: center;
     text-transform: uppercase;
     padding: $v-gutter/2 $h-gutter/2 0;
@@ -138,6 +141,14 @@ $narrow-content-width: 690px;
 	@include text-shadow(rgba(0, 0, 0, 0.1) 1px 1px 1px);
 	text-align: center;
 	color: $light-text-color;
+    }
+    .logo-wrapper {
+	text-align: center;
+	margin: $v-gutter 0;
+	display: block;
+	&:hover {
+	    border-bottom: none;
+	}
     }
     .name { 
 	margin-bottom: 0;
@@ -215,6 +226,9 @@ $narrow-content-width: 690px;
 
 /* $$PROJECT PAGE STYLES */
 .project-page {
+    .logo-wrapper {
+	margin: 0;
+    }
     .content-header, p {
 	@extend .narrow-content;
     }
