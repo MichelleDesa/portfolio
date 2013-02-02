@@ -26,18 +26,20 @@ $v-gutter: 10px;
 
 
 /* $$THEME VARIABLES */
-$highlight-color: #d77e2c;
-$alt-highlight-color: #c25f04;
-$dark-text-color: #333;
+$highlight-color: #79b5c0;
+$alt-highlight-color: #448490;
+$dark-text-color: #1b444a;
 $light-text-color: #fff;
 $link-color: $alt-highlight-color;
 $header-text-color: $dark-text-color;
+$border-color: $alt-highlight-color;
+$background-color: #f8fbfc;
 
 
 
 /* $$TYPOGRAPHY VARIABLES*/
 $base-font-size: 16px;
-$base-line-height: 1.2;
+$base-line-height: 1.4;
 $header-line-height: 1;
 
 $h1-font-size: 48px;
@@ -63,6 +65,7 @@ body {
     line-height: $base-line-height;
     text-rendering: optimizeLegibility;
     color: $dark-text-color;
+    background-color: $background-color;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -136,7 +139,7 @@ $narrow-content-width: 690px;
 .page-header {
     background: $highlight-color;
     padding: $v-gutter; //Also required to fix margin collapsing issue with .name element
-    border-bottom: 5px solid $alt-highlight-color;
+    border-bottom: 5px solid $border-color;
     .name, .title { 
 	@include text-shadow(rgba(0, 0, 0, 0.1) 1px 1px 1px);
 	text-align: center;
@@ -165,7 +168,7 @@ $narrow-content-width: 690px;
 }
 
 .page-content {
-    margin: $v-gutter*6 $h-gutter;
+    margin: $v-gutter*4 $h-gutter;
 }
 
 .narrow-content {
@@ -177,7 +180,7 @@ $narrow-content-width: 690px;
 .page-footer {
     text-align: center;
     padding: $v-gutter;
-    border-bottom: 5px solid $alt-highlight-color;
+    border-bottom: 5px solid $border-color;
     p {     
 	@include rem(18px);
     }
@@ -228,6 +231,9 @@ $narrow-content-width: 690px;
 .project-page {
     .logo-wrapper {
 	margin: 0;
+    }
+    .content-header {
+	text-align: center;
     }
     .content-header, p {
 	@extend .narrow-content;

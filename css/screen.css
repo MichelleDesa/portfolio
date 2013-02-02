@@ -372,9 +372,10 @@ body {
   font-size: 16px;
   font-size: 1.6rem;
   font-family: "PT Sans", sans-serif;
-  line-height: 1.2;
+  line-height: 1.4;
   text-rendering: optimizeLegibility;
-  color: #333333;
+  color: #1b444a;
+  background-color: #f8fbfc;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -422,14 +423,14 @@ p {
 }
 
 a {
-  color: #c25f04;
+  color: #448490;
   text-decoration: none;
 }
 a:visited {
-  color: #d77e2c;
+  color: #79b5c0;
 }
 a:hover, a:active {
-  border-bottom: 1px dotted #c25f04;
+  border-bottom: 1px dotted #448490;
 }
 
 figure {
@@ -451,9 +452,9 @@ figcaption {
 
 /* $$LAYOUT & THEME STYLES */
 .page-header {
-  background: #d77e2c;
+  background: #79b5c0;
   padding: 10px;
-  border-bottom: 5px solid #c25f04;
+  border-bottom: 5px solid #448490;
 }
 .page-header .name, .page-header .title {
   text-shadow: rgba(0, 0, 0, 0.1) 1px 1px 1px;
@@ -482,7 +483,7 @@ figcaption {
 }
 
 .page-content {
-  margin: 60px 20px;
+  margin: 40px 20px;
 }
 
 .narrow-content, .bio, .project-page .content-header, .project-page p {
@@ -494,7 +495,7 @@ figcaption {
 .page-footer {
   text-align: center;
   padding: 10px;
-  border-bottom: 5px solid #c25f04;
+  border-bottom: 5px solid #448490;
 }
 .page-footer p {
   font-size: 18px;
@@ -531,10 +532,10 @@ figcaption {
 }
 .project-list li a {
   text-decoration: none;
-  color: #333333;
+  color: #1b444a;
 }
 .project-list li a:hover, .project-list li a:active {
-  color: #c25f04;
+  color: #448490;
   border-bottom: none;
 }
 .project-list .project-title {
@@ -548,6 +549,9 @@ figcaption {
 /* $$PROJECT PAGE STYLES */
 .project-page .logo-wrapper {
   margin: 0;
+}
+.project-page .content-header {
+  text-align: center;
 }
 .project-page img {
   max-width: 100%;
